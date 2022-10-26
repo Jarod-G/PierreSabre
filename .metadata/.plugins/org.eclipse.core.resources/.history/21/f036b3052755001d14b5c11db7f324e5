@@ -1,0 +1,19 @@
+package personnages;
+
+public class Humain {
+	private String nom;
+	private String boissonFavorite;
+	private int argent;
+
+	public int getArgent() {
+		return this.argent;
+	}
+
+	public String getNom() {
+		return this.nom;
+	}
+	
+	public String direBonjour() {
+		System.out.printf("Bonjour ! Je m'appelle %s et j'aime boire du %s \n",nom, boissonFavorite);
+	}
+}
