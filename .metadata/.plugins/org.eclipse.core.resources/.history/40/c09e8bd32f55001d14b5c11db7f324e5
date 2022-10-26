@@ -1,0 +1,9 @@
+package personnages;
+
+public class commerçants extends Humain{
+
+	public commerçants(String nom, String boissonFavorite, int argent) {
+		super(nom, boissonFavorite, argent);
+	}
+
+}
