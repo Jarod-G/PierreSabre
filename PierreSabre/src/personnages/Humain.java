@@ -4,6 +4,8 @@ public class Humain {
 	private String nom;
 	private String boissonFavorite;
 	private int argent;
+	protected int nbConnaissance;
+	protected Humain[] memoire = new Humain[30];
 
 	public Humain(String nom, String boissonFavorite, int argent) {
 		this.nom = nom;
@@ -19,7 +21,7 @@ public class Humain {
 		return this.nom;
 	}
 
-	public void parler(String texte) {
+	protected void parler(String texte) {
 		System.out.println(this.nom + " : " + texte);
 	}
 
@@ -42,11 +44,27 @@ public class Humain {
 		}
 	}
 
-	public void gagnerArgent(int gain) {
+	protected void gagnerArgent(int gain) {
 		this.argent += gain;
 	}
 
-	public void perdreArgent(int perte) {
+	protected void perdreArgent(int perte) {
 		this.argent -= perte;
 	}
+
+	public void faireConnaissanceAvec(Humain autreHumain) {
+		this.direBonjour();
+		autreHumain.direBonjour();
+		autreHumain.memoriser(this);
+
+	}
+
+	private void memoriser(Humain humain) {
+
+	}
+
+//	private void repondre(Humain humain) {
+//		
+//	}
+
 }
