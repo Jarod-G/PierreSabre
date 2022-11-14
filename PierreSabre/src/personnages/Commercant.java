@@ -1,0 +1,20 @@
+package personnages;
+
+public class Commercant extends Humain {
+
+	public Commercant(String nom, String boissonFavorite, int argent) {
+		super(nom, boissonFavorite, argent);
+	}
+
+	public int seFaireExtorquer() {
+		int argent = this.getArgent();
+		this.parler("Le monde est trop injuste, j'ai perdu tous mes sous");
+		this.perdreArgent(argent);
+		return this.getArgent();
+	}
+
+	public void recevoir(int argent) {
+		this.gagnerArgent(argent);
+		this.parler(argent + " sous ! Je te remercie généreux donateur");
+	}
+}

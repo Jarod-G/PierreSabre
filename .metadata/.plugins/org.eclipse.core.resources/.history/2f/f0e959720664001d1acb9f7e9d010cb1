@@ -9,7 +9,7 @@ public class Yakuza extends Humain {
 		this.clan = clan;
 	}
 
-	public void extorquer(Commercant victime) {
+	public void extorquer(commerçants victime) {
 		this.parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par la ?");
 		this.parler(victime.getNom() + ", si tu tiens à la vie donne moi ta bourse !");
 		int argentExt = victime.getArgent();
