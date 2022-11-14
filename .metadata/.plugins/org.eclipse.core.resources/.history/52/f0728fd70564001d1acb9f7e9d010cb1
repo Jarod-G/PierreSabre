@@ -1,7 +1,6 @@
 package histoire;
 
 import personnages.Yakuza;
-import personnages.commerçants;
 
 public class HistoireTP4 {
 
