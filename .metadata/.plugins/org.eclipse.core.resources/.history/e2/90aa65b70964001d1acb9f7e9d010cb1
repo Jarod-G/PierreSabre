@@ -3,14 +3,12 @@ package personnages;
 public class Yakuza extends Humain {
 	private String clan;
 	private int reputation = 0;
+	private int force;
 
-	public Yakuza(String nom, String boissonFavorite, int argent, String clan) {
+	public Yakuza(String nom, String boissonFavorite, int argent, String clan, int force) {
 		super(nom, boissonFavorite, argent);
 		this.clan = clan;
-	}
-
-	public int getReputation() {
-		return this.reputation;
+		this.force = force;
 	}
 
 	public void extorquer(Commercant victime) {
@@ -25,18 +23,17 @@ public class Yakuza extends Humain {
 	}
 
 	public int perdre() {
-		int argentYakuza = this.getArgent();
-		this.perdreArgent(argentYakuza);
+		this.perdreArgent(this.getArgent());
 		this.reputation -= 1;
-		this.parler("J'ai perdu mon duel et mes " + argentYakuza + " sous, snif... J'ai déshonoré le clan de "
+		this.parler("J'ai perdu mon duel et mes " + this.getArgent() + " sous, snif... J'ai déshonoré le clan de "
 				+ this.clan + ".");
-		return argentYakuza;
+		return this.reputation;
 	}
 
 	public void gagner(int gain) {
 		this.gagnerArgent(gain);
 		this.reputation += 1;
-		this.parler("Ce ronin pensant vraiment battre " + this.getNom() + " du clan de " + this.clan
-				+ " ?\n Je l'ai dépouillé de ses " + gain + " sous.");
+		this.parler("Ce ronin pensant vraiment battre " + this.getNom() + " du clan des " + this.clan
+				+ " ?\n Je l'ai dépouillé de ses " + gain + ".");
 	}
 }

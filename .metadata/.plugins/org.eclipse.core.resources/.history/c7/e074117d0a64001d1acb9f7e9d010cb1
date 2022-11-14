@@ -28,15 +28,15 @@ public class Yakuza extends Humain {
 		int argentYakuza = this.getArgent();
 		this.perdreArgent(argentYakuza);
 		this.reputation -= 1;
-		this.parler("J'ai perdu mon duel et mes " + argentYakuza + " sous, snif... J'ai déshonoré le clan de "
+		this.parler("J'ai perdu mon duel et mes " + this.getArgent() + " sous, snif... J'ai déshonoré le clan de "
 				+ this.clan + ".");
-		return argentYakuza;
+		return this.getArgent();
 	}
 
 	public void gagner(int gain) {
 		this.gagnerArgent(gain);
 		this.reputation += 1;
-		this.parler("Ce ronin pensant vraiment battre " + this.getNom() + " du clan de " + this.clan
-				+ " ?\n Je l'ai dépouillé de ses " + gain + " sous.");
+		this.parler("Ce ronin pensant vraiment battre " + this.getNom() + " du clan des " + this.clan
+				+ " ?\n Je l'ai dépouillé de ses " + gain + ".");
 	}
 }
